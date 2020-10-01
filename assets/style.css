@@ -31,7 +31,7 @@ textarea {
 }
 
 .row {
-  /* white-space: pre-wrap; */
+  white-space: normal;
   height: 80px;
   border-top: 1px solid white;
 }
@@ -62,6 +62,7 @@ textarea {
 .eventBlock {
   padding-right: 0px;
   padding-left: 0px;
+  height: 99%;
 }
 /* Ensuring elements display inline on very small screens */
 .col-xs-2 {
@@ -72,12 +73,20 @@ textarea {
   width: 60%;
 }
 
+.eventTextArea {
+  border-left: 5px solid darkgray;
+  border-right: 5px solid #027b96;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  height: 99%;
 }
 
 .saveBtn i:hover {
