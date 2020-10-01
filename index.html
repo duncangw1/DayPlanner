@@ -29,10 +29,22 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- Timeblocks -->
+      <section class="row" id="9am">
+        <p class="col-md-1 hour">9AM</p>
+        <div class="col-md-10 eventBlock">
+          <textarea
+            class="form-control eventTextArea"
+            id="text9"
+            style="height: 100%"
+          ></textarea>
+        </div>
+        <button class="col-md-1 saveBtn"><i>Save</i></button>
+      </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
