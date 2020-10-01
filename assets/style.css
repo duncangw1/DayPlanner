@@ -63,6 +63,14 @@ textarea {
   padding-right: 0px;
   padding-left: 0px;
 }
+/* Ensuring elements display inline on very small screens */
+.col-xs-2 {
+  width: 15%;
+}
+/* Ensuring elements display inline on very small screens */
+.col-xs-8 {
+  width: 60%;
+}
 
 .saveBtn {
   border-left: 1px solid black;
