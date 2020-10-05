@@ -43,20 +43,23 @@ textarea {
   text-align: right;
   line-height: 4;
 }
-
-.past {
+/* Past text area color that remains when selected */
+.past,
+.past:focus {
   background-color: #d3d3d3;
-  color: white;
+  color: #a2a2a2;
 }
-
-.present {
+/* Present text area color that remains when selected */
+.present,
+.present:focus {
   background-color: #ff6961;
   color: white;
 }
-
-.future {
+/* Future text area color that remains when selected */
+.future,
+.future:focus {
   background-color: #77dd77;
-  color: white;
+  color: #29a229;
 }
 /* Removed padding from both sides of the eventBlock */
 .eventBlock {
@@ -74,7 +77,6 @@ textarea {
 }
 
 .eventTextArea {
-  border-left: 5px solid darkgray;
   border-right: 5px solid #027b96;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

@@ -43,15 +43,19 @@ $(document).ready(function () {
 
     for (var j = 0; j < combined.length; j++) {
       console.log(combined[j]);
+      var currentID = "#" + combined[j].id;
       if (combined[j].time === currentHour) {
         console.log("present");
-        var currentID = "#" + combined[j].id;
-        $(currentID).addClass("present");
+        $(currentID)
+          .addClass("present")
+          .css("border-left", "5px solid #d70b00");
         console.log(currentID);
       } else if (combined[j].time < currentHour) {
         console.log("past");
+        $(currentID).addClass("past").css("border-left", "5px solid #a2a2a2");
       } else {
         console.log("future");
+        $(currentID).addClass("future").css("border-left", "5px solid #29a229");
       }
     }
   }
