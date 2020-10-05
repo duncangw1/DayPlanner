@@ -67,4 +67,23 @@ $(document).ready(function () {
   }
 
   colorChange();
+
+  $(".saveBtn").on("click", function (event) {
+    event.preventDefault();
+    var textToSave = $(this).closest(".row").find(".eventTextArea").val();
+    console.log(textToSave);
+    var savedToRow = $(this).closest(".row").find(".hour").text();
+
+    localStorage.setItem(savedToRow, textToSave);
+  });
+
+  $("#text9").append(localStorage.getItem("9AM"));
+  $("#text10").append(localStorage.getItem("10AM"));
+  $("#text11").append(localStorage.getItem("11AM"));
+  $("#text12").append(localStorage.getItem("12PM"));
+  $("#text1").append(localStorage.getItem("1PM"));
+  $("#text2").append(localStorage.getItem("2PM"));
+  $("#text3").append(localStorage.getItem("3PM"));
+  $("#text4").append(localStorage.getItem("4PM"));
+  $("#text5").append(localStorage.getItem("5PM"));
 });
