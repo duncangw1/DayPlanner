@@ -10,19 +10,25 @@ $(document).ready(function () {
 
   var hours = [09, 10, 11, 12, 13, 14, 15, 16, 17];
   var rowIDs = [];
+  var buttonIDs = [];
   var combined = {};
 
-  getRowIDs();
+  getIDs();
 
-  function getRowIDs() {
-    var total = $(".eventTextArea").length;
-    for (var i = 0; i <= total; i++) {
+  function getIDs() {
+    var totalText = $(".eventTextArea").length;
+    for (var i = 0; i <= totalText; i++) {
       var eachID = $(".eventTextArea").eq(i).attr("id");
       rowIDs[i] = eachID;
     }
-    console.log(rowIDs);
+
+    var totalBtns = $(".saveBtn").length;
+    for (var k = 0; k <= totalBtns; k++) {
+      var eachID = $(".saveBtn").eq(k).attr("id");
+      buttonIDs[k] = eachID;
+    }
     combined = hours.map(function (x, i) {
-      return { time: x, id: rowIDs[i] };
+      return { time: x, idText: rowIDs[i], idBtn: buttonIDs[i] };
     });
     console.log(combined);
   }
@@ -43,7 +49,7 @@ $(document).ready(function () {
 
     for (var j = 0; j < combined.length; j++) {
       console.log(combined[j]);
-      var currentID = "#" + combined[j].id;
+      var currentID = "#" + combined[j].idText;
       if (combined[j].time === currentHour) {
         console.log("present");
         $(currentID)
