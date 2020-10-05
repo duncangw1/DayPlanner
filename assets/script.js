@@ -8,10 +8,27 @@ $(document).ready(function () {
   // Calling writeDate function
   writeDate();
 
-  colorChange();
+  var hours = [09, 10, 11, 12, 13, 14, 15, 16, 17];
+  var rowIDs = [];
+  var combined = {};
+
+  getRowIDs();
+
+  function getRowIDs() {
+    var total = $(".eventTextArea").length;
+    for (var i = 0; i <= total; i++) {
+      var eachID = $(".eventTextArea").eq(i).attr("id");
+      rowIDs[i] = eachID;
+    }
+    console.log(rowIDs);
+    combined = hours.map(function (x, i) {
+      return { time: x, id: rowIDs[i] };
+    });
+    console.log(combined);
+  }
 
   function colorChange() {
-    var currentHour = moment().format("HH");
+    var currentHour = parseInt(moment().format("HH"));
     console.log(currentHour);
 
     if (currentHour < 9 || currentHour > 17) {
@@ -21,5 +38,18 @@ $(document).ready(function () {
         $(".eventTextArea").addClass("past");
       }
     }
+
+    for (var j = 0; j < hours.length; j++) {
+      console.log(hours[j]);
+      if (hours[j] === currentHour) {
+        console.log("present");
+      } else if (hours[j] < currentHour) {
+        console.log("past");
+      } else {
+        console.log("future");
+      }
+    }
   }
+
+  colorChange();
 });
