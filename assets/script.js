@@ -34,16 +34,21 @@ $(document).ready(function () {
     if (currentHour < 9 || currentHour > 17) {
       if (currentHour < 9) {
         $(".eventTextArea").addClass("future");
+        return;
       } else if (currentHour > 17) {
         $(".eventTextArea").addClass("past");
+        return;
       }
     }
 
-    for (var j = 0; j < hours.length; j++) {
-      console.log(hours[j]);
-      if (hours[j] === currentHour) {
+    for (var j = 0; j < combined.length; j++) {
+      console.log(combined[j]);
+      if (combined[j].time === currentHour) {
         console.log("present");
-      } else if (hours[j] < currentHour) {
+        var currentID = "#" + combined[j].id;
+        $(currentID).addClass("present");
+        console.log(currentID);
+      } else if (combined[j].time < currentHour) {
         console.log("past");
       } else {
         console.log("future");
