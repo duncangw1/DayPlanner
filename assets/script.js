@@ -30,7 +30,6 @@ $(document).ready(function () {
     combined = hours.map(function (x, i) {
       return { time: x, idText: rowIDs[i], idBtn: buttonIDs[i] };
     });
-    console.log(combined);
   }
 
   // Calling getIDs function
@@ -39,7 +38,6 @@ $(document).ready(function () {
   // Function to change the text area color based on past, present, or future time
   function colorChange() {
     var currentHour = parseInt(moment().format("HH"));
-    console.log(currentHour);
 
     if (currentHour < 9 || currentHour > 17) {
       if (currentHour < 9) {
@@ -52,19 +50,15 @@ $(document).ready(function () {
     }
 
     for (var j = 0; j < combined.length; j++) {
-      console.log(combined[j]);
       var currentID = "#" + combined[j].idText;
+
       if (combined[j].time === currentHour) {
-        console.log("present");
         $(currentID)
           .addClass("present")
           .css("border-left", "5px solid #d70b00");
-        console.log(currentID);
       } else if (combined[j].time < currentHour) {
-        console.log("past");
         $(currentID).addClass("past").css("border-left", "5px solid #a2a2a2");
       } else {
-        console.log("future");
         $(currentID).addClass("future").css("border-left", "5px solid #29a229");
       }
     }
@@ -76,10 +70,11 @@ $(document).ready(function () {
   // Click event listener for the save buttons that saves the text in the text area to local storage
   $(".saveBtn").on("click", function (event) {
     event.preventDefault();
+    // Grab the text of closest textarea to the clicked save button
     var textToSave = $(this).closest(".row").find(".eventTextArea").val();
-    console.log(textToSave);
+    // Grab the hour of closest row to the clicked save button
     var savedToRow = $(this).closest(".row").find(".hour").text();
-
+    // Save the hour and associated reminder to local storage
     localStorage.setItem(savedToRow, textToSave);
   });
 
