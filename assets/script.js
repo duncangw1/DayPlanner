@@ -8,13 +8,13 @@ $(document).ready(function () {
   // Calling writeDate function
   writeDate();
 
+  // Establishing global arrays and object array
   var hours = [09, 10, 11, 12, 13, 14, 15, 16, 17];
   var rowIDs = [];
   var buttonIDs = [];
   var combined = {};
 
-  getIDs();
-
+  // Function to get text area IDs and Btn IDs and put them into the combined object array
   function getIDs() {
     var totalText = $(".eventTextArea").length;
     for (var i = 0; i <= totalText; i++) {
@@ -33,6 +33,10 @@ $(document).ready(function () {
     console.log(combined);
   }
 
+  // Calling getIDs function
+  getIDs();
+
+  // Function to change the text area color based on past, present, or future time
   function colorChange() {
     var currentHour = parseInt(moment().format("HH"));
     console.log(currentHour);
@@ -66,8 +70,10 @@ $(document).ready(function () {
     }
   }
 
+  // Calling colorChange function
   colorChange();
 
+  // Click event listener for the save buttons that saves the text in the text area to local storage
   $(".saveBtn").on("click", function (event) {
     event.preventDefault();
     var textToSave = $(this).closest(".row").find(".eventTextArea").val();
@@ -77,6 +83,7 @@ $(document).ready(function () {
     localStorage.setItem(savedToRow, textToSave);
   });
 
+  // Appending all text saved to local storage to repopulate saved reminders
   $("#text9").append(localStorage.getItem("9AM"));
   $("#text10").append(localStorage.getItem("10AM"));
   $("#text11").append(localStorage.getItem("11AM"));
