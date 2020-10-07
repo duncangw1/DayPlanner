@@ -9,12 +9,12 @@ This README has been generated to accompany the completed Day Planner applicatio
 ## Screenshots
 
 Empty Day Planner
-<img src="" alt="Empty Day Planner">
+<img src="assets/images/EmptyDayPlanner.png" alt="Empty Day Planner">
 
 ---
 
 Day Planner with Events Added
-<img src="" alt="Planner with events added">
+<img src="assets/images/DayPlannerWithEventsAdded.png" alt="Planner with events added">
 
 ---
 
