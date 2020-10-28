@@ -6,6 +6,10 @@ This README has been generated to accompany the completed Day Planner applicatio
 
 [Day Planner](https://duncangw1.github.io/DayPlanner/)
 
+## Technologies Used
+
+- HTML, CSS, Bootstrap, JavaScript, jQuery, Moment.js, Font Awesome, Google Fonts
+
 ## Screenshots
 
 Empty Day Planner
